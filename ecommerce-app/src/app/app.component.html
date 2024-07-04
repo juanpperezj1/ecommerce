@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <nav class="bg-gray-800 p-4">
+    <ul class="flex space-x-4">
+      <li>
+        <a routerLink="/users" class="text-white flex items-center">
+          <i class="fas fa-users mr-2"></i> Users
+        </a>
+      </li>
+      <li>
+        <a routerLink="/products" class="text-white flex items-center">
+          <i class="fas fa-box-open mr-2"></i> Products
+        </a>
+      </li>
+      <li>
+        <a routerLink="/orders" class="text-white flex items-center">
+          <i class="fas fa-shopping-cart mr-2"></i> Orders
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cart" class="text-white flex items-center">
+          <i class="fas fa-shopping-basket mr-2"></i> Shopping Cart
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="container mx-auto">
+  <router-outlet></router-outlet>
+</div>

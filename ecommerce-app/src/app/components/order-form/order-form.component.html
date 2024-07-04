@@ -1,0 +1,24 @@
+<div class="container mx-auto mt-8 max-w-lg">
+  <h2 class="text-xl font-bold text-center">{{ orderForm.id ? 'Edit Order' : 'Add Order' }}</h2>
+  <form (ngSubmit)="orderForm.id ? updateOrder() : createOrder()" class="mt-4">
+    <div class="mb-4">
+      <label for="userId" class="block text-gray-700">User ID</label>
+      <input type="number" [(ngModel)]="orderForm.userId" name="userId" class="w-full border border-gray-300 rounded px-3 py-2" required />
+    </div>
+    <div class="mb-4">
+      <label for="products" class="block text-gray-700">Products</label>
+      <div *ngFor="let product of orderForm.products; let i = index" class="flex items-center mb-2">
+        <input type="number" [(ngModel)]="product.productId" name="product-{{i}}-id" class="w-full border border-gray-300 rounded px-3 py-2 mr-2" placeholder="Product ID" required />
+        <input type="number" [(ngModel)]="product.quantity" name="product-{{i}}-quantity" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Quantity" required />
+        <button type="button" (click)="removeProduct(i)" class="bg-red-500 text-white py-1 px-2 rounded ml-2">Remove</button>
+      </div>
+      <button type="button" (click)="addProduct()" class="bg-blue-500 text-white py-2 px-4 rounded mt-2">Add Product</button>
+    </div>
+    <div class="flex justify-between">
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">
+        {{ orderForm.id ? 'Update' : 'Create' }} Order
+      </button>
+      <button type="button" (click)="resetForm()" class="bg-gray-500 text-white py-2 px-4 rounded">Reset</button>
+    </div>
+  </form>
+</div>

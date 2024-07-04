@@ -1,0 +1,24 @@
+<div class="container mx-auto mt-8 max-w-lg">
+    <h2 class="text-xl font-bold text-center">{{ productForm.id ? 'Edit Product' : 'Add Product' }}</h2>
+    <form (ngSubmit)="productForm.id ? updateProduct() : createProduct()" class="mt-4">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700">Name</label>
+        <input type="text" [(ngModel)]="productForm.name" name="name" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="mb-4">
+        <label for="description" class="block text-gray-700">Description</label>
+        <input type="text" [(ngModel)]="productForm.description" name="description" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="mb-4">
+        <label for="price" class="block text-gray-700">Price</label>
+        <input type="number" [(ngModel)]="productForm.price" name="price" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="flex justify-between">
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">
+          {{ productForm.id ? 'Update' : 'Create' }} Product
+        </button>
+        <button type="button" (click)="resetForm()" class="bg-gray-500 text-white py-2 px-4 rounded">Reset</button>
+      </div>
+    </form>
+  </div>
+  
