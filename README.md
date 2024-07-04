@@ -28,7 +28,13 @@ Este proyecto incluye una API para un sistema de comercio electrónico y una apl
 3. Crea un archivo `.env` en el directorio `api` con la configuración de la base de datos:
 
     ```plaintext
-    DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/nombre_bd?schema=public"
+    DATABASE_URL="postgresql://postgres:123456@localhost:5432/mydb?schema=public"
+
+    POSTGRES_URL=postgresql://postgres:123456@localhost:5432/mydb
+    POSTGRES_USER=postgres
+    POSTGRES_DB=mydb
+    POSTGRES_PORT=5432
+    POSTGRES_PASSWORD=123456
     ```
 
 4. Ejecuta las migraciones de Prisma para configurar la base de datos:
